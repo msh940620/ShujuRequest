@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-hM-en3">
+                                <rect key="frame" x="200" y="60" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="XZr-KS-CwE"/>
+                                    <constraint firstAttribute="height" constant="30" id="fyQ-2W-obD"/>
+                                </constraints>
+                                <state key="normal" title="发出"/>
+                                <connections>
+                                    <action selector="postimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ps9-Q1-bFC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsx-CH-YUl">
+                                <rect key="frame" x="20" y="130" width="560" height="450"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f2c-hM-en3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f7F-yu-wnl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rsx-CH-YUl" secondAttribute="trailing" id="fF4-fW-0LA"/>
+                            <constraint firstItem="Rsx-CH-YUl" firstAttribute="top" secondItem="f2c-hM-en3" secondAttribute="bottom" constant="40" id="xiP-zz-nya"/>
+                            <constraint firstItem="f2c-hM-en3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="zga-vZ-aOW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rsx-CH-YUl" secondAttribute="bottom" constant="20" id="zls-nE-SUb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Rsx-CH-YUl" secondAttribute="leading" id="zze-h5-kMQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Rsx-CH-YUl" id="IcL-Hl-Ze5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="303" y="429"/>
         </scene>
     </scenes>
 </document>
